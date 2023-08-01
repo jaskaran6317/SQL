@@ -1,0 +1,31 @@
+--Creating a bike store database
+
+CREATE TABLE bikes (id INTEGER PRIMARY KEY, Model TEXT, price INTEGER, colour TEXT, age_group INTEGER);
+
+INSERT INTO bikes VALUES (1, "FIREFOX", 2500, "Black", 12);
+INSERT INTO bikes VALUES (2, "FIREFOX PLUS", 3800, "All Colour", 16);
+INSERT INTO bikes VALUES (3, "FIREFOX PRO", 5000, "Black", 18);
+INSERT INTO bikes VALUES (4, "FastX", 3400, "Yellow", 12);
+INSERT INTO bikes VALUES (5, "FASTXX", 5500, "All Colour", 18);
+INSERT INTO bikes VALUES (6, "FIREFOX III", 4200, "Black", 12);
+INSERT INTO bikes VALUES (7, "FIREFOX PLUS III", 5800, "All Colour", 16);
+INSERT INTO bikes VALUES (8, "FIREFOX PRO III", 6500, "Black", 18);
+INSERT INTO bikes VALUES (9, "FastX III", 8400, "Yellow", 12);
+INSERT INTO bikes VALUES (10, "FASTXX III", 9500, "All Colour", 18);
+INSERT INTO bikes VALUES (11, "FIREFOX IV", 10000, "Black", 12);
+INSERT INTO bikes VALUES (12, "FIREFOX PLUS IV", 12800, "All Colour", 16);
+INSERT INTO bikes VALUES (13, "FIREFOX PRO IV", 15000, "Black", 18);
+INSERT INTO bikes VALUES (14, "FastX IV", 24000 , "Yellow", 12);
+INSERT INTO bikes VALUES (15, "FASTXX IV", 25500, "All Colour", 18);
+
+--bikes above price of 20000 
+SELECT price FROM bikes WHERE price > 20000;
+
+--total price of stock
+SELECT SUM(price) FROM bikes;
+
+--bikes available in colour black
+SELECT id, colour FROM bikes WHERE colour= "Black";
+
+
+
