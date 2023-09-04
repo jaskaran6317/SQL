@@ -215,13 +215,25 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 
 SELECT * FROM countries;
 
-SELECT ID, name, MAX(population) as Highest_Population FROM countries; 
+SELECT 
+  AVG(population) as avg_population,
+  MAX(population) as max_population,
+  MIN(population) as min_population
+FROM countries;
 
-SELECT ID, name, MIN(population) as Lowest_Population FROM countries;
+SELECT name, population
+FROM countries GROUP BY name
+HAVING population > 100000000;
 
-SELECT ID, name, AVG(population) as Avg_Of_Population FROM countries;
+SELECT name, population,
+    CASE
+        WHEN population < 1000000 THEN 'Small'
+        WHEN population < 10000000 THEN 'Medium'
+        ELSE 'Large'
+        END AS population_category
+FROM countries;
 
-SELECT ID, AVG(median_age) as Avg_Median_Age FROM countries GROUP BY ID
-HAVING Avg_Median_Age <= 25;
+SELECT name, population, median_age
+FROM countries
+WHERE population > 50000000 AND median_age < 30;
 
-SELECT name FROM countries WHERE percent_one_year_change = 1 OR density_per_sq_km >10000;
