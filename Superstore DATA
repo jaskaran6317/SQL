@@ -1,0 +1,19 @@
+SELECT * FROM superstore 
+ORDER BY price;
+SELECT 
+  SUM(price) AS total_price,
+  AVG(price) AS average_price,
+  MIN(price) AS minimum_price,
+  MAX(price) AS maximum_price,
+  COUNT(*) AS total_items
+FROM superstore
+WHERE category = "Kitchen Supplies";
+
+/*Extra Question: What are the most expensive items in the catalog?*/
+
+SELECT
+  item_name,
+  price
+FROM superstore
+ORDER BY price DESC
+LIMIT 5;
