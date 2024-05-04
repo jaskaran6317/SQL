@@ -7,7 +7,7 @@ CREATE TABLE fortune_companies (
     healthcare_benefits BIT,
     paid_time_off_days INTEGER,
     maternity_leave_weeks INTEGER,
-    avg_employee_tenure REAL
+    avg_employee_tenure REAL 
 );
 
 INSERT INTO fortune_companies (company_name, industry, revenue, employees, healthcare_benefits, paid_time_off_days, maternity_leave_weeks, avg_employee_tenure)
